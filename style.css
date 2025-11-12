@@ -554,9 +554,11 @@ nav ul li a:hover {
 /* ===== PROJECT SECTION ===== */
 #projects {
   text-align: center;
-  padding: 60px 5%;               /* Symmetrical padding */
+  padding: 30px 5% 60px 5%; /* top | right | bottom | left */
   background-color: #fff;
 }
+
+
 
 /* Container wrapping all project cards */
 .projects-container {
@@ -779,15 +781,15 @@ nav ul li a:hover {
 }
 /* ===== CONTACT SECTION ===== */
 #contact {
-  background-color: #1944a1;   /* ✅ blue background */
+  background-color: #1944a1;   /* original blue background */
   padding: 60px 20px;
   text-align: center;
-  color: white;                /* white text for readability */
+  color: white;                /* white text */
 }
 
 /* ===== CONTACT SECTION TITLE ===== */
 #contact .section-title {
-  color: #F14A00;              /* ✅ orange title */
+  color: #F14A00;              /* original orange title */
   text-align: center;
   font-size: 2rem;
   margin-bottom: 20px;
@@ -799,8 +801,105 @@ nav ul li a:hover {
   display: block;
   width: 60px;
   height: 3px;
-  background-color: #09247e;   /* ✅ blue underline (matches theme) */
+  background-color: #09247e;   /* original blue underline */
   margin: 8px auto 0;
   border-radius: 2px;
+}
+
+/* ===== CONTACT CONTENT ===== */
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;            
+  justify-content: center;    
+  gap: 40px;                  
+  margin-top: 40px;
+}
+
+/* ===== CONTACT FORM ===== */
+.contact-form {
+  flex: 1 1 350px;            
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  text-align: left;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 2px solid #F14A00;   /* orange focus */
+}
+
+/* Submit button */
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #F14A00;   /* original orange button */
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #d13b00;   /* slightly darker orange on hover */
+}
+
+/* ===== CONTACT INFO ===== */
+.contact-info {
+  flex: 1 1 300px;
+  max-width: 400px;
+  text-align: left;
+  color: white;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #F14A00;              /* original orange */
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.contact-info a {
+  color: #ffffff;              /* keep links white */
+  text-decoration: underline;
+}
+
+.contact-info a:hover {
+  color: #F14A00;              /* original orange on hover */
+  text-decoration: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
 }
 
