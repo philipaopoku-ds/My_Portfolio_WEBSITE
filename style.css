@@ -558,8 +558,6 @@ nav ul li a:hover {
   background-color: #fff;
 }
 
-
-
 /* Container wrapping all project cards */
 .projects-container {
   display: flex;
@@ -671,21 +669,53 @@ nav ul li a:hover {
   border-radius: 2px;
 }
 
-.tools-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px 20px; /* vertical | horizontal spacing */
-}
-
-.tools-container span {
-  padding: 8px 15px;
+/* ===== Accordion-style Tools & Technologies ===== */
+.tool-btn {
   background-color: #d64b0a;
   color: white;
-  border-radius: 5px;
-  font-weight: 500;
-  font-size: 0.95rem;
+  padding: 12px 20px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
 }
+
+.tool-btn:hover {
+  background-color: #b33e08;
+}
+
+.tool-content {
+  display: none;
+  margin-top: 10px;
+  animation: dropdown 0.3s ease;
+}
+
+.tool-content span {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #f5f5f5;
+  color: #333;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 0.95rem;
+  border: 1px solid #ddd;
+}
+
+.tool-category.active .tool-content {
+  display: block;
+}
+
+/* Optional smooth dropdown animation */
+@keyframes dropdown {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 .project-card:hover {
   transform: translateY(-5px);
