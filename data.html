@@ -23,6 +23,7 @@
     <nav aria-label="Main">
       <button class="menu-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
       <ul id="nav-list">
+        <li><a href="index.html">Home</a></li>
         <li><a href="engineering.html">Engineering</a></li>
         <li><a href="data.html" aria-current="page">Data &amp; ML</a></li>
         <li><a href="web.html">Web</a></li>
@@ -34,6 +35,7 @@
   </div>
 </header>
 <main id="top">
+<div class="crumbs"><div class="wrap"><a class="back" href="index.html" id="back-link">&larr; Back</a><span aria-hidden="true">/</span><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Data &amp; ML</span></div></div>
 <section class="block" id="data" aria-labelledby="data-title">
   <div class="wrap">
     <div class="head">
@@ -41,6 +43,17 @@
       <p>End-to-end projects: cleaning messy data, engineering features with domain knowledge, comparing models honestly and deploying apps people can use.</p>
     </div>
     <div class="projects">
+      <article class="project feature">
+        <img src="images/project-ngl.jpg" alt="Screenshot of the NGL recovery simulator showing ethane recovery, propane recovery, NGL product and compression power, with a recovery-by-component bar chart" width="1200" height="784" loading="lazy">
+        <div class="body">
+          <span class="new">New &middot; Process engineering meets data</span>
+          <h3>Turbo expander NGL recovery simulator</h3>
+          <p>A Python simulation of a generic cryogenic gas plant using the Peng-Robinson equation of state. Move the sliders to see how cold separator temperature and demethanizer pressure trade ethane and propane recovery against compression power.</p>
+          <div class="metrics"><span>Ethane 62%</span><span>Propane 92%</span><span>707 t/d NGL</span></div>
+          <p class="stack">Python, thermo (Peng-Robinson EOS), NumPy, pandas, Matplotlib, Streamlit</p>
+          <div class="links"><a href="https://ngl-recovery-simulator.streamlit.app/" target="_blank" rel="noopener">Try the app</a><a href="https://github.com/philipaopoku-ds/ngl-recovery-simulator" target="_blank" rel="noopener">Code</a></div>
+        </div>
+      </article>
       <article class="project">
         <img src="images/project-machine-failure.svg" alt="Illustration of a machine gear beside a rising trend line" width="800" height="450" loading="lazy">
         <div class="body">
@@ -87,6 +100,37 @@
         <p class="next"><b>Next:</b> AWS Certified Solutions Architect, Associate (in progress)</p>
       </div>
     </div>
+    <div class="builds">
+      <h3 class="builds-title">Cloud projects I'm building</h3>
+      <div class="build-grid">
+        <article class="build">
+          <div class="build-top"><h4>Secure website hosting on AWS</h4><span class="pill live">Live</span></div>
+          <p>My five website concepts served worldwide over HTTPS from a private S3 bucket through CloudFront, with a CloudFront Function for clean page links. Built within the free tier.</p>
+          <p class="aws">Amazon S3 &middot; CloudFront &middot; Origin Access Control &middot; CloudFront Functions</p>
+          <p class="build-link"><a href="https://d2oytk3ycuqnei.cloudfront.net/" target="_blank" rel="noopener">View the live site &rarr;</a></p>
+        </article>
+        <article class="build">
+          <div class="build-top"><h4>Lead capture backend</h4><span class="pill next-up">Up next</span></div>
+          <p>A serverless backend that saves website enquiries securely and emails the business owner, so contact forms on small business sites just work.</p>
+          <p class="aws">API Gateway &middot; Lambda &middot; DynamoDB &middot; SES</p>
+        </article>
+        <article class="build">
+          <div class="build-top"><h4>Predictive maintenance alert service</h4><span class="pill planned">Planned</span></div>
+          <p>My machine failure model running as a cloud API that sends an email alert when failure risk is high.</p>
+          <p class="aws">Lambda &middot; ECR &middot; API Gateway &middot; SNS &middot; CloudWatch</p>
+        </article>
+        <article class="build">
+          <div class="build-top"><h4>Well production data pipeline</h4><span class="pill planned">Planned</span></div>
+          <p>Upload daily well data and AWS calculates rates and water cut, then flags production drops.</p>
+          <p class="aws">S3 &middot; Lambda &middot; Athena &middot; SNS</p>
+        </article>
+        <article class="build">
+          <div class="build-top"><h4>Receipt-to-bookkeeping automation</h4><span class="pill planned">Planned</span></div>
+          <p>Upload a receipt and AWS reads the totals and adds them to a bookkeeping record automatically.</p>
+          <p class="aws">S3 &middot; Textract &middot; Lambda &middot; DynamoDB</p>
+        </article>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -118,6 +162,8 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const t = document.querySelector('.menu-toggle'), list = document.getElementById('nav-list');
 t.addEventListener('click', () => { const o = list.classList.toggle('open'); t.setAttribute('aria-expanded', o); t.textContent = o ? 'Close' : 'Menu'; });
 list.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { list.classList.remove('open'); t.setAttribute('aria-expanded', false); t.textContent = 'Menu'; }));
+const back = document.getElementById('back-link');
+if (back) back.addEventListener('click', e => { if (document.referrer && new URL(document.referrer).host === location.host && history.length > 1) { e.preventDefault(); history.back(); } });
 </script>
 </body>
 </html>

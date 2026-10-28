@@ -23,6 +23,7 @@
     <nav aria-label="Main">
       <button class="menu-toggle" aria-expanded="false" aria-controls="nav-list">Menu</button>
       <ul id="nav-list">
+        <li><a href="index.html">Home</a></li>
         <li><a href="engineering.html" aria-current="page">Engineering</a></li>
         <li><a href="data.html">Data &amp; ML</a></li>
         <li><a href="web.html">Web</a></li>
@@ -34,6 +35,7 @@
   </div>
 </header>
 <main id="top">
+<div class="crumbs"><div class="wrap"><a class="back" href="index.html" id="back-link">&larr; Back</a><span aria-hidden="true">/</span><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Engineering</span></div></div>
 <section class="block eng" id="engineering" aria-labelledby="eng-title">
   <div class="wrap">
     <div class="head">
@@ -95,6 +97,18 @@
     </div>
 
     <div class="research">
+      <article class="conf">
+        <span class="kind">Process simulation, Genser Energy</span>
+        <h3>Modelling a gas conditioning plant in Aspen HYSYS</h3>
+        <p>Under the guidance of my supervisor, I built Aspen HYSYS models of the plant's process sections, including gas sweetening and fractionation. Building each section taught me how the units work together, how operating conditions affect product quality, and how to set up, converge and check a full plant model.</p>
+        <p class="result">The models and plant data are confidential company information, so I can't share them here. I'm happy to talk through my approach in an interview.</p>
+      </article>
+      <article class="conf ngl">
+        <span class="kind">Simulation project, October 2026</span>
+        <h3>Turbo expander NGL recovery simulator</h3>
+        <p>I built a Python model of a generic cryogenic gas plant, from inlet cooling and turbo expansion to the demethanizer and residue gas recompression, using the Peng-Robinson equation of state. Sensitivity studies show how temperature and column pressure trade NGL recovery against compression power.</p>
+        <p class="result">Base case: 62% ethane and 92% propane recovery. <a href="https://ngl-recovery-simulator.streamlit.app/" target="_blank" rel="noopener" style="color:#FF8A57">Try the interactive app</a></p>
+      </article>
       <article>
         <span class="kind">Simulation project, Feb to Jul 2025</span>
         <h3>Cutting CO&#8322; from hydrogen production</h3>
@@ -146,6 +160,8 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const t = document.querySelector('.menu-toggle'), list = document.getElementById('nav-list');
 t.addEventListener('click', () => { const o = list.classList.toggle('open'); t.setAttribute('aria-expanded', o); t.textContent = o ? 'Close' : 'Menu'; });
 list.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { list.classList.remove('open'); t.setAttribute('aria-expanded', false); t.textContent = 'Menu'; }));
+const back = document.getElementById('back-link');
+if (back) back.addEventListener('click', e => { if (document.referrer && new URL(document.referrer).host === location.host && history.length > 1) { e.preventDefault(); history.back(); } });
 </script>
 </body>
 </html>
