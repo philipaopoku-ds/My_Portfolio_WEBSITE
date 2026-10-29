@@ -346,3 +346,34 @@ h1,h2,h3,.brand,.proof strong{font-variant-numeric:lining-nums}
 @media (max-width:1000px){.build-grid{grid-template-columns:1fr 1fr}.build-grid .build,.build-grid .build:nth-child(-n+2){grid-column:auto}.build-grid .build:last-child{grid-column:1/-1}}
 @media (max-width:820px){.build-grid{grid-template-columns:1fr}.build-grid .build:last-child{grid-column:auto}}
 .build .build-link{margin-top:10px}.build .build-link a{font-weight:700}
+/* engineering work cards */
+.work-head{margin-top:56px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.work-head h2{font-size:clamp(1.6rem,3vw,2.2rem);color:#fff}
+.work-head p{color:#B6B9C9;font-size:.95rem}
+.work{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.job{background:#16255E;border:1px solid #263877;border-radius:16px}
+.job summary{list-style:none;cursor:pointer;padding:22px 22px 18px;display:block}
+.job summary::-webkit-details-marker{display:none}
+.job summary:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:16px}
+.job .kind{font-size:.85rem;font-weight:700;color:#FF8A57;display:block;margin-bottom:8px}
+.job h3{font-size:1.18rem;color:#fff}
+.job summary p{color:#C4C7D6;margin-top:8px;font-size:.96rem}
+.job .more{display:inline-block;margin-top:12px;font-weight:700;font-size:.9rem;color:#9DB4FF}
+.job .more::after{content:" +"}
+.job[open] .more::after{content:" \2212"}
+.job[open]{grid-column:1/-1}
+.job[open] .more{color:#fff}
+.job-body{padding:0 22px 22px;border-top:1px solid #263877;margin:0 22px;padding-left:0;padding-right:0;padding-top:16px;color:#C4C7D6}
+.job-body p{font-size:.98rem}
+.job-body ul{margin-top:10px;padding-left:20px;display:grid;gap:8px;font-size:.97rem}
+.job-body b{color:#fff}
+.ghana{margin-top:16px;display:grid;grid-template-columns:.9fr 1.1fr;gap:26px;background:#16255E;border:1px solid #263877;border-left:4px solid #FF8A57;border-radius:16px;padding:26px}
+.ghana .kind{font-size:.85rem;font-weight:700;color:#FF8A57;display:block;margin-bottom:8px}
+.ghana h3{font-size:1.3rem;color:#fff}
+.ghana p{color:#C4C7D6;margin-top:10px}
+.ghana ul{padding-left:20px;display:grid;gap:8px;color:#C4C7D6;font-size:.97rem}
+.ghana b{color:#fff}
+.earlier.one{grid-template-columns:1fr}
+@media (max-width:1000px){.work{grid-template-columns:1fr 1fr}}
+@media (max-width:820px){.work,.ghana{grid-template-columns:1fr}}
+@media (max-width:600px){.work{grid-template-columns:1fr}}
