@@ -378,3 +378,4 @@ h1,h2,h3,.brand,.proof strong{font-variant-numeric:lining-nums}
 @media (max-width:820px){.work,.ghana{grid-template-columns:1fr}}
 @media (max-width:600px){.work{grid-template-columns:1fr}}
 .also-row.two{grid-template-columns:1fr 1fr}.foot-sep{color:#4B5A8F}@media (max-width:820px){.also-row.two{grid-template-columns:1fr}}
+.cert .verify{margin-top:16px}.cert .verify a{display:inline-block;background:#fff;color:var(--blue);font-weight:700;text-decoration:none;padding:9px 16px;border-radius:10px}.cert .verify a:hover{background:#FFF0E8;color:#B53800}
