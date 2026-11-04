@@ -14,6 +14,6 @@ Process engineer with **four years in Ghana's gas industry**, now studying for a
 
 Also on the site: [freelance web work](https://philipaopoku-ds.github.io/My_Portfolio_WEBSITE/web.html) for small businesses.
 
-Hand-coded in HTML, CSS and JavaScript. No templates.
+Hand-coded in HTML, CSS and JavaScript. 
 
 [LinkedIn](https://www.linkedin.com/in/philipa-opoku) · philipaopoku072@gmail.com
